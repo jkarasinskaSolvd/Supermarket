@@ -1,19 +1,34 @@
 package org.solvd;
 
-public class Product {
-    private double price;
-    private String name;
+public abstract class Product {
+    private Double price;
     private String description;
 
     public Product() {
-        this.price = 0.0;
-        this.name = "";
-        this.description = "";
+        this.price = null;
+        this.description = null;
     }
 
-    public Product(double price, String name, String description) {
+    public Product(Double price, String description) {
         this.price = price;
-        this.name = name;
         this.description = description;
     }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public abstract void print();
 }
