@@ -11,4 +11,16 @@ public class WeightedProduct extends ProductType {
         super(price);
         this.weightInKilograms = weightInKilograms;
     }
+
+    @Override
+    public Double calculatePrice() {
+        return weightInKilograms * pricePerUnit;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString()+
+                ", weight in kilograms=" + weightInKilograms +
+                '}';
+    }
 }

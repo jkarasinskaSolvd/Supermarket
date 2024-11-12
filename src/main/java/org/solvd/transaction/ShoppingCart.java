@@ -35,15 +35,14 @@ public class ShoppingCart {
     public Double totalPrice() {
         Double total = 0.0;
         for (Product product : products) {
-            total += product.getPrice();
+            total += product.getType().calculatePrice();
         }
         return total;
     }
 
     public void printProducts() {
         for (Product product : products) {
-            product.print();
-            System.out.println("\n\n");
+            System.out.println(product.toString() + "\n");
         }
     }
 }

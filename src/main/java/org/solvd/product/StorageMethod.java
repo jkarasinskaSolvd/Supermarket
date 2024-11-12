@@ -1,5 +1,5 @@
 package org.solvd.product;
 
-public abstract class StorageMethod {
-
+public enum StorageMethod {
+    FRIDGE, REFRIGERATOR, SHELF
 }
