@@ -1,6 +1,6 @@
-package org.solvd;
+package org.solvd.product;
 
-public class WeightedProduct extends ProductType{
+public class WeightedProduct extends ProductType {
     Double weightInKilograms;
 
     public WeightedProduct() {

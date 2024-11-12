@@ -1,4 +1,4 @@
-package org.solvd;
+package org.solvd.product;
 
 public abstract class ProductType {
     Double price;

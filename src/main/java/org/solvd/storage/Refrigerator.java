@@ -1,4 +1,4 @@
-package org.solvd;
+package org.solvd.storage;
 
 public class Refrigerator {
 }

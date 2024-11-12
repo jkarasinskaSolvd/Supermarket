@@ -1,4 +1,6 @@
-package org.solvd;
+package org.solvd.transaction;
+
+import org.solvd.product.Product;
 
 import java.util.ArrayList;
 import java.util.List;

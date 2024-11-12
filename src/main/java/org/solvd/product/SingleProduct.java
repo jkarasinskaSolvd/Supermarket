@@ -1,6 +1,6 @@
-package org.solvd;
+package org.solvd.product;
 
-public class SingleProduct extends ProductType{
+public class SingleProduct extends ProductType {
     private Integer amount;
 
     public SingleProduct() {

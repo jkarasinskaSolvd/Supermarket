@@ -1,4 +1,4 @@
-package org.solvd;
+package org.solvd.transaction;
 
 public enum PaymentMethod {
     CASH,CARD;
