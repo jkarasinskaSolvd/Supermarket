@@ -91,7 +91,7 @@ public class Product {
         if(this.name != product.name) return false;
         if(this.barcode != product.barcode) return false;
         if(this.description != product.description) return false;
-        if(this.type != product.type) return false;
+        if(!this.type.equals(product.type))  return false;
         if(this.storageMethod != product.storageMethod) return false;
         if(this.category != product.category) return false;
         return true;

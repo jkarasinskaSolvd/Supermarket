@@ -1,8 +1,6 @@
 package org.solvd.storage;
 
-import org.solvd.product.Category;
-import org.solvd.product.Product;
-import org.solvd.product.StorageMethod;
+import org.solvd.product.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,19 +33,45 @@ public abstract class StoragePlace {
             addProduct(product);
         }
     }
-// TODO: remove product but partially
+// remove product but partially
     public void removeProduct(Product product) {
         products.stream()
                 .filter(product1 -> product1.equals(product))
                 .findFirst()
                 .ifPresent(product1 -> {
-
-
-        });
+                    if(product1.getType() instanceof WeightedProduct){
+                        WeightedProduct weightedProduct1 = (WeightedProduct) product1.getType();
+                        WeightedProduct weightedProduct = (WeightedProduct) product.getType();
+                        Double weightLeft = weightedProduct1.getWeightInKilograms()
+                                            - weightedProduct.getWeightInKilograms();
+                        if(weightLeft <= 0){
+                            products.remove(product);
+                        }else{
+                            weightedProduct1.setWeightInKilograms(weightLeft);
+                            product1.setType(weightedProduct1);
+                        }
+                    } else if (product1.getType() instanceof SingleProduct) {
+                        SingleProduct singleProduct1 = (SingleProduct) product1.getType();
+                        SingleProduct singleProduct = (SingleProduct) product.getType();
+                        Integer itemsLeft = singleProduct1.getAmount() - singleProduct.getAmount();
+                        if(itemsLeft <= 0){
+                            products.remove(product);
+                        }else{
+                            singleProduct1.setAmount(itemsLeft);
+                            product1.setType(singleProduct1);
+                        }
+                    }
+                });
     }
 
     public List<Product> getProducts() {
         return products;
+    }
+
+    public void printProducts() {
+        for (Product product : products) {
+            System.out.println(product.toString() + "\n");
+        }
     }
 
     @Override

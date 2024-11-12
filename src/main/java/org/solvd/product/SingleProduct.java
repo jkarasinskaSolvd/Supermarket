@@ -7,8 +7,16 @@ public class SingleProduct extends ProductType {
         super();
     }
 
-    public SingleProduct(Double price, Integer amount) {
-        super(price);
+    public SingleProduct(Double pricePerUnit, Integer amount) {
+        super(pricePerUnit);
+        this.amount = amount;
+    }
+
+    public Integer getAmount() {
+        return amount;
+    }
+
+    public void setAmount(Integer amount) {
         this.amount = amount;
     }
 

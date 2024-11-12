@@ -65,7 +65,7 @@ public class Transaction {
     }
 
     private void printReceipt(){
-        System.out.printf("Receipt: \n\n");
+        System.out.printf("\n\nReceipt: \n\n");
         cart.printProducts();
         System.out.printf("Total price: " + cart.totalPrice());
     }
@@ -73,7 +73,7 @@ public class Transaction {
     private void removeFromStock(List<StoragePlace> storagePlaceList){
         for(Product product : cart.getProducts()){
             for(StoragePlace storagePlace : storagePlaceList){
-                storagePlace.getProducts().remove(product);
+                storagePlace.removeProduct(product);
             }
         }
     }

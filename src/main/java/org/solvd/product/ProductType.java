@@ -1,5 +1,7 @@
 package org.solvd.product;
 
+import java.util.Objects;
+
 public abstract class ProductType {
     protected Double pricePerUnit;
 
@@ -27,7 +29,7 @@ public abstract class ProductType {
         if(getClass() != o.getClass()) return false;
         if(hashCode() != o.hashCode()) return false;
         ProductType productType = (ProductType) o;
-        if(this.pricePerUnit != productType.pricePerUnit) return false;
+        if(!Objects.equals(this.pricePerUnit, productType.pricePerUnit)) return false;
         return true;
     }
 
